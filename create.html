@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		 <title>Index</title>
+		<link rel="stylesheet" href="bootstrap-4.0.0-beta.3-dist/css/bootstrap.css">
+        <script src="js/Storage.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Contacts</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+           <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="create.html">Create Reminder</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="update.html">Update Reminder</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="delete.html">Delete Reminder</a>
+            </li>
+             
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+	<body onload="doShowAll()" style="padding: 20px">
+		<div class="container">
+		<div class="row">
+		<div class="col-5">
+       <br><br><center><h1><p class="text-warning bg-dark">Bills Reminder</p></h1></center>
+		<nav class="navbar navbar-light bg-light">
+		<form name="ReminderForm">
+  <div class="form-group">
+    <label for="exampleInputDate">Date:</label>
+    <input type="Date" class="form-control " name="date" id="exampleInputDate" aria-describedby="Help" placeholder="Enter Date" onclick="setdate()" value="2013-01-01">
+    <div id="Error" class="val_error"></div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputnumber">Amount:</label>
+    <input type="number" class="form-control" name="amount" id="exampleInputnumber" placeholder="Enter Amount" >
+      <div id="Error" class="val_error"></div>
+  </div>
+
+	<div class="form-group">
+    <label for="examplereminder">Create Reminder:</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="reminder" rows="3"></textarea>
+	<div id="Error" class="val_error"></div>
+	 <br><button type="button" class="btn btn-primary btn-lg" onclick="SaveItem()">  SAVE </button>
+        <a href="Home.html"><button type="button" class="btn btn-secondary btn-lg">BACK</button></a>
+  </div>
+        </form>
+            </nav>
+            </div>
+           
+    
+		<div class="col-7">
+       <br><br><center><h1><p class="text-warning bg-dark">All Reminder</p></h1></center>
+		<nav class="navbar navbar-light bg-light">
+		<form name="AllReminderForm">
+      
+            <table id=list></table>
+			<p>
+				<label><input type=button value="Clear" onclick="ClearAll()">
+					<i>* Removes all items</i></label>
+			</p>
+
+           
+        </form>
+            </nav>
+            </div>
+ </div>
+        </div>
+        
+        
+    <!-- Bootstrap core JavaScript -->
+  <script src="bootstrap-4.0.0-beta.3-dist/js/jquery.min.js"></script>
+        <script src="bootstrap-4.0.0-beta.3-dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    
+</html>
